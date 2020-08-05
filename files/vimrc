@@ -1,1 +1,38 @@
-hi
+syntax off
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'bfrg/vim-cpp-modern'
+call vundle#end()
+syntax on
+
+
+imap jk <Esc>
+set laststatus=2
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
+set tabstop=4
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+
+set number
+filetype plugin indent on
+set wildmenu
+set lazyredraw
+set showmatch
+set incsearch
+set hlsearch
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap j gj
+nnoremap k gk
+nnoremap B ^
+nnoremap E $
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+command Bd bp | sp | bn | bd
+
